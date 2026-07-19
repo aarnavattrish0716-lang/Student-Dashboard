@@ -38,7 +38,7 @@ else:
         by="Marks",
         ascending=ascending
     )
-    with st.container():
+    with st.container(border=True):
     # Here using enumerate we will get index which will be stored in i
         for i, student in enumerate(st.session_state.students):
             col1, col2, col3, col4, col5 = st.columns([3, 2, 2, 2, 1])
