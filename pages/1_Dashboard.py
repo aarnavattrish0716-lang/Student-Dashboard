@@ -38,18 +38,19 @@ else:
         by="Marks",
         ascending=ascending
     )
+    with st.container():
     # Here using enumerate we will get index which will be stored in i
-    for i, student in enumerate(st.session_state.students):
-        col1, col2, col3, col4, col5 = st.columns([3, 2, 2, 2, 1])
-        with col1:
-            st.write(student["Name"])
-        with col2:
-            st.write(student["Subject"])
-        with col3:
-            st.write(student["Marks"])
-        with col4:
-            st.write(student["Age"])
-        with col5:
-            if st.button("🗑", key=f"delete_{i}"):
-                st.session_state.students.pop(i)
-                st.rerun()
+        for i, student in enumerate(st.session_state.students):
+            col1, col2, col3, col4, col5 = st.columns([3, 2, 2, 2, 1])
+            with col1:
+                st.write(student["Name"])
+            with col2:
+                st.write(student["Subject"])
+            with col3:
+                st.write(student["Marks"])
+            with col4:
+                st.write(student["Age"])
+            with col5:
+                if st.button("🗑", key=f"delete_{i}"):
+                    st.session_state.students.pop(i)
+                    st.rerun()
