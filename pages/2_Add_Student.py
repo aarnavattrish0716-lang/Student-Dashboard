@@ -4,7 +4,7 @@ import streamlit as st
 if "students" not in st.session_state:
     st.session_state.students=[] # A list will be created
 st.title("➕ Add Student")
-with st.form("student_form"):
+with st.form("student_form",clear_on_submit=True):
     name = st.text_input("Student Name")
     age = st.number_input(
         "Age",
